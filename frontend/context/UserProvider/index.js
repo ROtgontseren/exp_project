@@ -11,8 +11,8 @@ const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   const [formUserData, setLoginUserData] = useState({
-    email: "naraa@gmail.com",
-    password: "",
+    email: "otgoo@gmail.com",
+    password: "otgoo123",
     rePassword: "",
     name: "",
     currency_type: "",

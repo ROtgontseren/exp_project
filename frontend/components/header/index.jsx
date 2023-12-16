@@ -4,11 +4,12 @@ import Link from "next/link";
 import { DefLogo } from "@/components/Logos";
 import RecordForm from "@/components/form/addRecordForm";
 
+
 const navigations = [
   { name: "Dashboard", path: "/" },
   { name: "Records", path: "/records" },
 ];
-
+ 
 const Header = () => {
   const [open, setOpen] = useState(false);
 

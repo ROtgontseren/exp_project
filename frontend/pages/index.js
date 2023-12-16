@@ -4,6 +4,7 @@ import { FaBeer, FaHome } from "react-icons/fa";
 import { UserContext } from "@/context/UserProvider";
 import { MoonIcon, SunIcon } from "@/components/iconsvg";
 import { ThemeContext } from "@/context/ThemeContex";
+import Dashboard from "./dashboard";
 
 export default function Home() {
   const router = useRouter();
@@ -29,34 +30,38 @@ export default function Home() {
   };
 
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between `}
-    >
-      <div>
-        {console.log("user", user)}
-        <h1>Welcome Home Page - {user.name}</h1>
-        <h2>Email: {user.email}</h2>
-        <label className="swap swap-rotate">
-          {/* this hidden checkbox controls the state */}
-          <input
-            type="checkbox"
-            className="theme-controller"
-            value={theme}
-            onChange={() => {
-              changeTheme(theme === "light" ? "dark" : "light");
-            }}
-          />
-
-          {/* sun icon */}
-          <SunIcon />
-
-          {/* moon icon */}
-          <MoonIcon />
-        </label>
-        <button className="btn" onClick={logout}>
-          logout
-        </button>
-      </div>
+    <main>
+         <button className="btn" onClick={logout}>
+             logout
+         </button>
+      <Dashboard/>
     </main>
   );
 }
+
+
+      // <div>
+      //   {console.log("user", user)}
+      //   <h1>Welcome Home Page - {user.name}</h1>
+      //   <h2>Email: {user.email}</h2>
+      //   <label className="swap swap-rotate">
+      //     {/* this hidden checkbox controls the state */}
+      //     <input
+      //       type="checkbox"
+      //       className="theme-controller"
+      //       value={theme}
+      //       onChange={() => {
+      //         changeTheme(theme === "light" ? "dark" : "light");
+      //       }}
+      //     />
+
+      //     {/* sun icon */}
+      //     <SunIcon />
+
+      //     {/* moon icon */}
+      //     <MoonIcon />
+      //   </label>
+      //   <button className="btn" onClick={logout}>
+      //     logout
+      //   </button>
+      // </div>
