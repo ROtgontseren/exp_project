@@ -31,37 +31,33 @@ export default function Home() {
 
   return (
     <main>
-         <button className="btn" onClick={logout}>
-             logout
-         </button>
-      <Dashboard/>
+      <Dashboard />
     </main>
   );
 }
 
+// <div>
+//   {console.log("user", user)}
+//   <h1>Welcome Home Page - {user.name}</h1>
+//   <h2>Email: {user.email}</h2>
+//   <label className="swap swap-rotate">
+//     {/* this hidden checkbox controls the state */}
+//     <input
+//       type="checkbox"
+//       className="theme-controller"
+//       value={theme}
+//       onChange={() => {
+//         changeTheme(theme === "light" ? "dark" : "light");
+//       }}
+//     />
 
-      // <div>
-      //   {console.log("user", user)}
-      //   <h1>Welcome Home Page - {user.name}</h1>
-      //   <h2>Email: {user.email}</h2>
-      //   <label className="swap swap-rotate">
-      //     {/* this hidden checkbox controls the state */}
-      //     <input
-      //       type="checkbox"
-      //       className="theme-controller"
-      //       value={theme}
-      //       onChange={() => {
-      //         changeTheme(theme === "light" ? "dark" : "light");
-      //       }}
-      //     />
+//     {/* sun icon */}
+//     <SunIcon />
 
-      //     {/* sun icon */}
-      //     <SunIcon />
-
-      //     {/* moon icon */}
-      //     <MoonIcon />
-      //   </label>
-      //   <button className="btn" onClick={logout}>
-      //     logout
-      //   </button>
-      // </div>
+//     {/* moon icon */}
+//     <MoonIcon />
+//   </label>
+//   <button className="btn" onClick={logout}>
+//     logout
+//   </button>
+// </div>

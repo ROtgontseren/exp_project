@@ -5,7 +5,7 @@ const Records = () => {
   return (
     <div className="bg-slate-300 w-screen h-screen">
       <Header />
-      <div className="flex gap-12">
+      <div className="flex gap-12 px-[120px]">
         <div className="flex flex-col gap-6 p-6">
           <h1 className="text-xl font-semibold">Records</h1>
           <label
@@ -113,7 +113,7 @@ const Records = () => {
           </div>
           <button className="btn btn-ghost flex justify-start">
             {" "}
-            <img src="Minus.png" />
+            <img src="minus.png" />
             Add Categories
           </button>
           <h1 className="text-lg font-semibold">Amount Range</h1>
@@ -135,7 +135,7 @@ const Records = () => {
           </ul>
         </div>
         <div className="flex flex-col gap-6">
-          <div className="w-[1800px]">
+          <div className="w-[1500px]">
             <div className="flex justify-between py-6">
               <div className="join">
                 <button className="join-item btn">«</button>

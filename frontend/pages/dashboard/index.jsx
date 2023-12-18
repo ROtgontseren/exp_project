@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Header from "@/components/Header";
 import One from "@/components/Folder/one";
 import Three from "@/components/Folder/Three";
@@ -26,7 +26,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Dashboard;

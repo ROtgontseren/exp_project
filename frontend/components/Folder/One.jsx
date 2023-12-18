@@ -3,10 +3,10 @@ import React from "react";
 const One = () => {
   return (
     <div className="w-1/4 h-[200px] bg-blue-500 rounded-2xl relative flex justify-between">
-      <img className="w-full h-full absolute" src="Noise.png" />
+      <img className="w-full h-full absolute" src="noise.png" />
       <div className="flex flex-col">
         <div className="flex gap-2 p-4">
-          <img className="bg-white rounded-full" src="Vector.png" />
+          <img className="bg-white rounded-full" src="vector.png" />
           <span className="text-white font-bold">Geld</span>
         </div>
         <h1 className="text-slate-100 text-lg px-4 py-2 mt-12">Cash</h1>
