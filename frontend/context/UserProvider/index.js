@@ -47,7 +47,7 @@ const UserProvider = ({ children }) => {
       router.push("/");
     } catch (error) {
       console.log("error", error);
-      toast.error(`${error.response.data.message}`, { autoClose: 3000 });
+      // toast.error(`${error.response.data.message}`, { autoClose: 3000 });
     } finally {
       setLoading(false);
     }

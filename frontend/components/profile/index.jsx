@@ -7,7 +7,7 @@ const profile = () => {
   return (
     <div>
       <button
-        className="btn"
+        className="btn btn-ghost"
         onClick={() => document.getElementById("my_modal_4").showModal()}
       >
         {user.name}
