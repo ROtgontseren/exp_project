@@ -1,6 +1,14 @@
 const { sql } = require("../config/pgDb");
 
-const getAllTransaction = async (req, res) => {};
+const getAllTransaction = async (req, res) => {
+  try {
+    const data =
+      await sql`SELECT * FROM transaction ORDER BY createdat DESC LIMIT 5`;
+    res.status(200).json({ message: "success", data });
+  } catch (error) {
+    toast.error("алдаа гарлаа.");
+  }
+};
 
 const createTransaction = async (req, res) => {
   try {

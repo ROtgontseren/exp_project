@@ -1,6 +1,9 @@
 import React from "react";
+import { TransactionContext } from "@/context/TransactionContext";
+import { useContext } from "react";
 
 const Six = () => {
+  const { transactions } = useContext(TransactionContext);
   return (
     <div className="w-[87%] h-[400px] bg-white my-8 rounded-3xl flex flex-col">
       <h1 className="text-base font-semibold p-6">Last Records</h1>
