@@ -5,8 +5,6 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 
 export const TransactionContext = createContext(null);
-// const [transactions, setTransactions] = useState([]);
-// const [reFetch, setReFetch] = useState(false);
 
 const TransactionProvider = ({ children }) => {
   const { user } = useContext(UserContext);
@@ -18,6 +16,8 @@ const TransactionProvider = ({ children }) => {
     category_id: "e49029c3-a0ed-4881-aa07-e1ad69cd740e",
     updatedat: "2014",
   });
+  const [transactions, setTransactions] = useState([]);
+  const [reFetch, setReFetch] = useState(false);
 
   const changeTransactionData = (key, value) => {
     setTransactionData({ ...transactionData, [key]: value });
@@ -39,11 +39,10 @@ const TransactionProvider = ({ children }) => {
     }
   };
   const getTransactions = async () => {
-    console.log("WORKING");
     try {
       const {
         data: { transactions },
-      } = await axios.get("http://localhost:8008/transactions/" + user_id);
+      } = await axios.get("http://localhost:8008/transaction/" + user_id);
       console.log("TRA");
       // toast.success("Гүйлгээнүүдийг амжилттай татлаа.");
       setTransactions(transactions);
@@ -53,10 +52,22 @@ const TransactionProvider = ({ children }) => {
     }
   };
 
+  // const getTotalIncome = async () => {
+  //   try {
+  //     const {
+  //       data: { transactions },
+  //     } = await axios.get("http://localhost:8008/transaction/" + user_id);
+  //   } catch (error) {
+  //     console.log("TER", error);
+  //     toast.error("Гүйлгээг нэмэхэд алдаа гарлаа.");
+  //   }
+  // };
+  // };
+
   useEffect(() => {
     console.log("TCT");
     getTransactions();
-  }, []);
+  }, [reFetch]);
 
   return (
     <TransactionContext.Provider
@@ -64,7 +75,7 @@ const TransactionProvider = ({ children }) => {
         transactionData,
         changeTransactionData,
         addTransaction,
-        // transactions,
+        transactions,
       }}
     >
       {children}

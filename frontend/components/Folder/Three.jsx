@@ -1,6 +1,21 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import myAxios from "@/utils/axios";
 
-const Three = () => {
+const Three = ({ totalExpense }) => {
+  const [totals, setTotals] = useState({ totalIncome: 0, totalExpense: 0 });
+
+  const getTotalIncExp = async () => {
+    const {
+      data: { totalExpense },
+    } = await myAxios.get("/transaction/total");
+    setTotals({ ...totals, totalExpense });
+    console.log("EXP", totalExpense);
+  };
+
+  useEffect(() => {
+    getTotalIncExp();
+  }, []);
   return (
     <div className="w-1/4 h-[200px] bg-white rounded-2xl">
       <div className="flex items-center px-6 gap-2 my-3">
@@ -16,7 +31,14 @@ const Three = () => {
         <h1 className="text-lg font-semibold">Total Expenses</h1>
       </div>
       <hr />
-      <h2 className="px-6 text-4xl font-bold my-4">1,200,000₮</h2>
+      {totals.totalExpense > 0 && (
+        <span className="font-bold lg:text-4xl md:text-2xl text-xl text-red-400 mx-6 my-4">
+          -{totals.totalExpense}₮
+        </span>
+      )}
+      {!totals.totalExpense && (
+        <div className="skeleton h-9 w-[93%] mx-4 my-4"></div>
+      )}
       <h2 className="px-6 text-slate-400 my-4">Your Income Amount</h2>
       <div className="flex items-center gap-2 px-6">
         <svg

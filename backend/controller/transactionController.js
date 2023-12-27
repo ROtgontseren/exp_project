@@ -34,5 +34,30 @@ const createTransaction = async (req, res) => {
     res.status(500).json({ message: "failed" });
   }
 };
+const getTotalIncomeExpense = async (req, res) => {
+  try {
+    const { user_id } = req.body;
 
-module.exports = { createTransaction, getAllTransaction };
+    const data =
+      await sql`SELECT transaction_type, SUM(amount) as total FROM transaction GROUP BY transaction_type`;
+    console.log("data", data);
+    const [inc] = data.filter((el) => el.transaction_type === "INC");
+    const [exp] = data.filter((el) => el.transaction_type === "EXP");
+    res
+      .status(201)
+      .json({
+        message: "success",
+        totalIncome: inc.total,
+        totalExpense: exp.total,
+      });
+  } catch (error) {
+    console.log("ERR", error);
+    res.status(500).json({ message: "failed" });
+  }
+};
+
+module.exports = {
+  createTransaction,
+  getAllTransaction,
+  getTotalIncomeExpense,
+};
