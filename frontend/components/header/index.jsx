@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { DefLogo } from "@/components/Logos";
 import RecordForm from "@/components/form/addRecordForm";
-import Profile from "../profile";
+// import Profile from "../profile";
 
 const navigations = [
   { name: "Dashboard", path: "/" },
@@ -60,7 +60,7 @@ const Header = () => {
           </button>
           {open && <RecordForm open={open} closeForm={closeForm} />}
           <img className="w-12 h-12 rounded-full" src="profile.jpg" alt="" />
-          <Profile />
+          {/* <Profile /> */}
         </div>
       </div>
     </div>
