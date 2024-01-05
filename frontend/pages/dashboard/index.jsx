@@ -7,7 +7,7 @@ import Five from "@/components/Folder/Five";
 import Four from "@/components/Folder/Four";
 import Six from "@/components/Folder/Six";
 
-const Dashboard = () => {
+const dashboard = () => {
   return (
     <div className="w-screen h-screen bg-slate-300">
       <Header />
@@ -29,4 +29,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default dashboard;
