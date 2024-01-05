@@ -519,6 +519,11 @@ chart.js@^4.1.1:
   dependencies:
     "@kurkle/color" "^0.3.0"
 
+chartjs-2@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.npmjs.org/chartjs-2/-/chartjs-2-0.0.1-security.tgz"
+  integrity sha512-42hSSpwvxUZl36rY2KRlsxSozxik0gnvBs6cDSLlzncuMfEcPvG59drLG0qlGJ8AU0Wop83oh6srEFeOjvKwWQ==
+
 chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz"

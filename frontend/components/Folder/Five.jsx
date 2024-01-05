@@ -1,7 +1,26 @@
+import { useEffect, useState } from "react";
 import React from "react";
-import PieChart from "../Chart/PieChart";
+import PieChart from "../Chart/DoughnurChart";
 
 const Five = () => {
+  const [categoryData, setCategoryData] = useState(null);
+
+  const getChartData = async () => {
+    try {
+      const {
+        data: { doughnutChart },
+      } = await myAxios.get("/transactions/chartdata/1234");
+      console.log("dougnut-DATA", doughnutChart);
+
+      setCategoryData(doughnutChart);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    console.log("E2");
+    getChartData();
+  }, []);
+
   return (
     <div className="w-2/5 h-[250px] bg-white rounded-2xl flex flex-col">
       <div className="flex justify-between px-6 py-2">
@@ -11,7 +30,7 @@ const Five = () => {
       <hr />
       <div className="flex ">
         <div className="px-10">
-          <PieChart />
+          <PieChart categoryData={categoryData} />
         </div>
         <div className="flex flex-col items-center p-8">
           <div className="flex gap-24">
