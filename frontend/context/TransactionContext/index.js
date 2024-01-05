@@ -3,6 +3,7 @@ import { UserContext } from "../UserProvider";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import myAxios from "@/utils/axios";
 
 export const TransactionContext = createContext(null);
 
@@ -28,7 +29,7 @@ const TransactionProvider = ({ children }) => {
     console.log("DATA", transactionData);
     console.log("USER", user);
     try {
-      const { data } = await axios.post("http://localhost:8008/transaction", {
+      const { data } = await myAxios.post("/transaction", {
         ...transactionData,
         user_id: "1fcdbe50-037a-492b-99db-76725a3db8f0",
       });
@@ -41,11 +42,11 @@ const TransactionProvider = ({ children }) => {
   const getTransactions = async () => {
     try {
       const {
-        data: { transactions },
-      } = await axios.get("http://localhost:8008/transaction/" + user_id);
+        data: { transaction },
+      } = await myAxios.get("/transaction/" + user_id);
       console.log("TRA");
       // toast.success("Гүйлгээнүүдийг амжилттай татлаа.");
-      setTransactions(transactions);
+      setTransactions(transaction);
     } catch (error) {
       console.log("TER", error);
       toast.error("Гүйлгээг нэмэхэд алдаа гарлаа.");
