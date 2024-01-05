@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "@/component/Logo";
+// import Logo from "@/component/Logo";
 
 const Loading = () => {
   return (
