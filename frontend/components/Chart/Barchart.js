@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-// import Chart from "chart.js/auto";
+import Chart from "chart.js/auto";
 import "./style.module.css";
 export default function Barchart() {
   const chartRef = useRef(null);
