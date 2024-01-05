@@ -5,7 +5,7 @@ import Three from "@/components/Folder/Three";
 import Two from "@/components/Folder/Two";
 import Five from "@/components/Folder/Five";
 import Four from "@/components/Folder/Four";
-import Six from "@/components/Folder/six";
+import Six from "@/components/Folder/Six";
 
 const Dashboard = () => {
   return (
